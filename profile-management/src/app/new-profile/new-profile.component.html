@@ -1,0 +1,79 @@
+<div class="container" id="new-profile">
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <h1>New Profile Form</h1>
+    <div class="form-group">
+      <label for="fullname">Full Name</label>
+      <input #fullname="ngModel" class="form-control" id="fullname" name="fullname" type="text" required [(ngModel)]="name"/>
+    </div>
+    <div [hidden]="fullname.valid || fullname.pristine"
+             class="alert alert-danger">
+          Name is required
+    </div>
+
+    <div class="form-group">
+      <label for="mail">Mail:</label>
+      <input #mail="ngModel" class="form-control" id="mail" name="mail" type="email" required [(ngModel)]="email"/>
+    </div>
+    <div [hidden]="mail.valid || mail.pristine"
+             class="alert alert-danger">
+          Email is required
+    </div>
+
+    <div class="form-group">
+      <label for="password1">Password</label>
+      <input #password1 ="ngModel" class="form-control" id="password1" name="password1" type="password" required [(ngModel)]="pass1"/>
+    </div>
+    <div [hidden]="password1.valid || password1.pristine"
+             class="alert alert-danger">
+          Password is required
+    </div>
+
+    <div class="form-group">
+      <label for="password2">Confirm Password</label>
+      <input #password2 ="ngModel" class="form-control" id="password2" name="password2" type="password" required [(ngModel)]="pass2"/>
+    </div>
+    <div [hidden]="password2.valid || password2.pristine"
+             class="alert alert-danger">
+          Password is required
+    </div>
+    <!-- <div [hidden]="password1==password2"
+             class="alert alert-danger">
+          Password didn't match
+    </div> -->
+
+    <div class="form-group">
+      <label for="addr">Address</label>
+      <input #addr="ngModel" class="form-control" id="address" name="address" type="text" required [(ngModel)]="address"/>
+    </div>
+    <div [hidden]="addr.valid || addr.pristine"
+             class="alert alert-danger">
+             Address is required
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date of Birth:</label>
+      <input #date="ngModel" class="form-control" id="dob" name="dob" type="date" required [(ngModel)]="dob"/>
+    </div>
+    <div [hidden]="date.valid || date.pristine"
+             class="alert alert-danger">
+          Birth date is required
+    </div>
+
+    <div class="form-group">
+      <label for="age">Gender</label>
+      <select #age="ngModel" class="form-control" id="age" name="age" [(ngModel)]="old">
+        <option *ngFor="let age of ages" [value]="age">
+            {{ age }}
+        </option>
+        </select>
+    </div>
+
+    <div [hidden]="age.valid || age.pristine"
+             class="alert alert-danger">
+             Gender is required
+    </div>
+
+    <button class="btn btn-success" type="submit" [disabled]="!form.form.valid">Create</button>
+    <!-- <button type="button" class="btn btn-success" (click)="newHero(); form.reset()">New Hero</button> -->
+  </form>
+</div>

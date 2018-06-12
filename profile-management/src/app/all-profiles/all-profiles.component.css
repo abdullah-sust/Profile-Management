@@ -1,0 +1,69 @@
+.total {
+    font-size: 24px;
+    color: red;
+}
+.list {
+    list-style-type: none;
+}
+.list_item {
+    border:1px solid rgb(201, 90, 90);
+    height: 265px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.avatar {
+    width:150px;
+    height:150px;
+    float:left;
+}
+.title {
+    font-size:20px;
+}
+.description {
+    font-size:18px;
+}
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    margin-top: 2%;
+}
+.search {
+    margin-top: 2%;
+    width: 20%;
+    max-width: 50%;
+    height: 100%;
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    margin-left: 40%;
+    margin-right: 40%;
+    text-align: center;
+}
+
+.submit {
+    margin-top: 1%;
+    width: 10%;
+    height: 100%;
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    margin-left: 45%;
+    margin-right: 45%;
+    text-align: center;
+}
+

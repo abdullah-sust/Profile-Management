@@ -1,0 +1,129 @@
+<button style="float: right; border-radius:5%; margin-top: 2%; margin-top: 2%;" type="button" class="btn btn-success" (click)="logout()">LogOut</button>
+
+
+<div class="container" [hidden]="editable">
+  <p>{{ errorMessage }}</p>
+	<div class="row">
+       <div class="col-md-7 ">
+<div class="panel panel-default">
+  <div class="panel-heading">  <h2>User profile</h2></div>
+   <div class="panel-body">
+    <div class="box box-info">
+        
+            <div class="box-body">
+                     <div class="col-sm-6">
+                     <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
+                
+                <input id="profile-image-upload" class="hidden" type="file">
+<div style="color:#999;" >click here to change profile image</div>
+                     </div>
+              <br>
+            </div>
+            <div class="col-sm-6">
+            <h4 style="color:#00b1b1;">{{ username }}</h4>
+              <span><p>Aspirant</p></span>            
+            </div>
+            <div class="clearfix"></div>
+            <hr style="margin:5px 0 5px 0;">
+<div class="col-sm-5 col-xs-6 tital " >First Name:</div><div class="col-sm-7 col-xs-6 ">{{ username }}</div>
+     <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Email</div><div class="col-sm-7 col-xs-6 ">{{ email }}</div>
+     <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Date Of Birth:</div><div class="col-sm-7">{{ dob | date: 'medium' }}</div>
+
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Address: </div><div class="col-sm-7">{{ address }}</div>
+
+ <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Nationality:</div><div class="col-sm-7">Indian</div>
+
+ <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " >Relition:</div><div class="col-sm-7">Hindu</div>
+          </div>
+<button type="button" class="btn btn-success" (click)="editProfile()">Edit Profile</button>
+        </div>
+    </div> 
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="container" [hidden]="!editable" >
+  <div class="row">
+    <div class="col-md-7 ">
+<div class="panel panel-default">
+<div class="panel-heading">  <h2>User profile</h2></div>
+<div class="panel-body">
+ <div class="box box-info">
+         <div class="box-body">
+                  <div class="col-sm-6">
+                  <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
+             <input id="profile-image-upload" class="hidden" type="file">
+<div style="color:#999;" >click here to change profile image</div>
+                  </div>
+           <br>
+         </div>
+         <div class="col-sm-6">
+         <h4 style="color:#00b1b1;">{{ username }}</h4>
+           <span><p>Aspirant</p></span>            
+         </div>
+         <div class="clearfix"></div>
+         <hr style="margin:5px 0 5px 0;">
+<div class="col-sm-5 col-xs-6 tital " >First Name:</div><div class="col-sm-7 col-xs-6 ">{{ username }}</div>
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+<div class="col-sm-5 col-xs-6 tital " >Email</div><div class="col-sm-7 col-xs-6 ">{{ email }}</div>
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+<div class="col-sm-5 col-xs-6 tital " ></div><div class="col-sm-7">
+    <label for="date">Date of Birth:{{ dob | date : 'MMMM d, y, h:mm:ss a z' }}</label>
+    <input #date="ngModel" class="form-control" id="dob" value="{{ dob | date : 'MMMM d, y, h:mm:ss a z' }}" name="dob" type="date" required [(ngModel)]="dob"/>
+    <div [hidden]="date.valid || date.pristine"
+             class="alert alert-danger">
+          Birth date is required
+    </div>
+  </div>
+<div class="clearfix"></div>
+<div class="bot-border"></div>
+<div class="col-sm-5 col-xs-6 tital " >Address: </div><div class="col-sm-7">{{ address }}
+    <label for="addr">Address</label>
+    <input #addr="ngModel" class="form-control" id="address" name="address" type="text" required [(ngModel)]="address"/>
+    <div [hidden]="addr.valid || addr.pristine"
+             class="alert alert-danger">
+             Address is required
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="bot-border"></div>
+<div class="col-sm-5 col-xs-6 tital " >Gender:</div><div class="col-sm-7">{{ gender }}
+    <label for="age">Gender</label>
+    <select #age="ngModel" class="form-control" id="age" name="age" [(ngModel)]="gender">
+      <option *ngFor="let age of ages" [value]="age">
+          {{ age }}
+      </option>
+      </select>
+      <div [hidden]="age.valid || age.pristine"
+        class="alert alert-danger">
+        Gender is required
+      </div>
+</div>
+<div class="clearfix"></div>
+       </div>
+<button style="margin-top: 2%;" type="button" class="btn btn-success" (click)="saveProfile()">Save</button>
+     </div>     
+ </div> 
+ </div>
+</div>
+</div>
+</div>
